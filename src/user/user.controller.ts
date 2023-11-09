@@ -97,7 +97,7 @@ export class UserController {
    response.cookie('jwt',jwt,{httpOnly:true})
  
     return {
-        message:'success'
+        user
     }
    }
 
