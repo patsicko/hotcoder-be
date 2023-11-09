@@ -14,7 +14,7 @@ const certificate = fs.readFileSync(certificatePath, 'utf8');
 const credentials = { key: privateKey, cert: certificate };
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule,{ httpsOptions: credentials });
   app.use(cookieParser());
   app.setGlobalPrefix('api')
   app.enableCors({
