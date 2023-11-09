@@ -1,7 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as fs from 'fs';
-import * as https from 'https';
 
 import * as path from 'path';
 import * as cookieParser from 'cookie-parser';
@@ -22,9 +21,6 @@ async function bootstrap() {
     origin: 'https://hotcoder-zp69-patsicko.vercel.app',
     credentials: true,
   })
-  const httpsServer = https.createServer(credentials, app);
-
-  // Specify the port for the server to listen on
-  await httpsServer.listen(8000);
+  await app.listen(8000);
 }
 bootstrap();
