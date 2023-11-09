@@ -18,7 +18,7 @@ async function bootstrap() {
   app.use(cookieParser());
   app.setGlobalPrefix('api')
   app.enableCors({
-    origin: 'http://localhost:4200',
+    origin: 'https://hotcoder-zp69-patsicko.vercel.app',
     credentials: true,
   })
   await app.listen(8000);
